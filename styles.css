@@ -1,0 +1,435 @@
+/* ==========================================================================
+   Aadya AC Party Hall - Architectural Boutique Hospitality Design System
+   Refined Theme: Regal Velvet Maroon (#5A121F), Warm Alabaster (#FAF6F4),
+   Soft Stone (#F3EAE7), Champagne Gold (#B08530), and Deep Charcoal (#1C0F12)
+   Accessibility: WCAG 2.1 AA & AAA Compliant High Contrast (No eye strain)
+   ========================================================================== */
+
+:root {
+  /* Warm, welcoming luxury canvas (soft ivory-alabaster instead of clinical blinding white) */
+  --canvas-alabaster: #FAF6F4;
+  --surface-stone: #F3EAE7;
+  --surface-stone-subtle: #F8F2F0;
+  --surface-white: #FFFFFF;
+  --surface-card: #FFFFFF;
+
+  /* Regal Velvet Maroon Palette - Luxurious, sophisticated, gentle on the eyes */
+  --brand-maroon: #5A121F;
+  --brand-maroon-hover: #430C16;
+  --brand-maroon-light: #731A2A;
+  --brand-maroon-deep: #380A12;
+  --brand-maroon-darkest: #22050A;
+  --brand-maroon-subtle: #F7EEEE;
+  --brand-maroon-tint: rgba(90, 18, 31, 0.06);
+  --brand-maroon-border: rgba(90, 18, 31, 0.16);
+
+  /* Deep Anchor Charcoal/Espresso for High Contrast Typography */
+  --anchor-charcoal: #1C0F12;
+  --anchor-charcoal-deep: #14080A;
+
+  /* Warm Champagne Gold & Brass Accents */
+  --accent-brass: #B08530;
+  --accent-brass-hover: #966E22;
+  --accent-brass-subtle: rgba(176, 133, 48, 0.14);
+  --accent-gold: #C29B38;
+
+  /* High Contrast Accessible Text */
+  --text-primary: #1C0F12;      /* 14.5:1 contrast against alabaster & white */
+  --text-muted: #584A4D;        /* 5.8:1 contrast against alabaster */
+  --text-light: #FAF6F4;        /* 12.8:1 contrast against deep maroon */
+  --text-light-muted: #D1C2C4;
+
+  /* Delicate Architectural Hairlines */
+  --hairline: rgba(90, 18, 31, 0.12);
+  --hairline-maroon: rgba(90, 18, 31, 0.22);
+  --hairline-brass: rgba(176, 133, 48, 0.32);
+
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--canvas-alabaster);
+  color: var(--text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--canvas-alabaster);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Scale */
+h1,
+h2,
+h3,
+h4,
+.font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+  font-weight: 500;
+  color: var(--anchor-charcoal);
+  line-height: 1.15;
+}
+
+.font-serif-light {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+/* Micro-Labels & Eyebrows with Maroon Accent */
+.micro-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand-maroon);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Hairline Dividers */
+.hairline-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--hairline);
+}
+
+.hairline-v {
+  width: 1px;
+  height: 100%;
+  background-color: var(--hairline);
+}
+
+/* Primary Boutique Buttons - Regal Velvet Maroon */
+.btn-boutique-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 3px;
+  border: 1px solid var(--brand-maroon);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(90, 18, 31, 0.18);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-boutique-solid:hover {
+  background-color: var(--brand-maroon-hover);
+  border-color: var(--brand-maroon-hover);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(90, 18, 31, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-boutique-solid:focus-visible {
+  outline: 2px solid var(--brand-maroon);
+  outline-offset: 3px;
+}
+
+/* Outline Buttons - Elegant Maroon Border */
+.btn-boutique-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--brand-maroon);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 3px;
+  border: 1px solid var(--brand-maroon-border);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-boutique-outline:hover {
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  border-color: var(--brand-maroon);
+  box-shadow: 0 3px 10px rgba(90, 18, 31, 0.18);
+}
+
+/* Brass & Gold Button */
+.btn-boutique-brass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 1.75rem;
+  border-radius: 3px;
+  border: 1px solid var(--accent-brass);
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(90, 18, 31, 0.18);
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-boutique-brass:hover {
+  background-color: var(--accent-brass);
+  border-color: var(--accent-brass);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(176, 133, 48, 0.28);
+}
+
+/* Text Links with Animated Arrow */
+.text-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--brand-maroon);
+  text-decoration: none;
+  transition: color 250ms ease;
+}
+
+.text-link-arrow i {
+  transition: transform 250ms ease;
+}
+
+.text-link-arrow:hover {
+  color: var(--brand-maroon-hover);
+}
+
+.text-link-arrow:hover i {
+  transform: translateX(4px);
+}
+
+/* Navigation Links with Maroon Underline */
+.nav-link-architectural {
+  position: relative;
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  transition: color 250ms ease;
+}
+
+.nav-link-architectural::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-maroon);
+  transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link-architectural:hover {
+  color: var(--brand-maroon);
+}
+
+.nav-link-architectural:hover::after {
+  width: 100%;
+}
+
+/* Sections */
+.section-alabaster {
+  background-color: var(--canvas-alabaster);
+  color: var(--text-primary);
+}
+
+.section-stone {
+  background-color: var(--surface-stone);
+  color: var(--text-primary);
+}
+
+.section-charcoal {
+  background-color: var(--brand-maroon-darkest);
+  color: var(--text-light);
+}
+
+/* Tactile Cards */
+.card-tactile-stone {
+  background-color: var(--surface-stone);
+  border: 1px solid var(--hairline-maroon);
+  border-radius: 4px;
+  transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+}
+
+.card-tactile-stone:hover {
+  border-color: var(--brand-maroon);
+  box-shadow: 0 4px 18px rgba(90, 18, 31, 0.07);
+}
+
+.card-tactile-white {
+  background-color: #FFFFFF;
+  border: 1px solid var(--hairline-maroon);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(90, 18, 31, 0.04);
+  transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+}
+
+.card-tactile-white:hover {
+  border-color: var(--brand-maroon);
+  box-shadow: 0 6px 20px rgba(90, 18, 31, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Booking Bar */
+.booking-bar-architectural {
+  background-color: #FFFFFF;
+  border: 1px solid var(--hairline-maroon);
+  box-shadow: 0 4px 24px -8px rgba(90, 18, 31, 0.08);
+  border-radius: 4px;
+}
+
+/* Form Inputs with Maroon Focus Ring */
+.input-architectural {
+  background-color: #FFFFFF;
+  border: 1px solid var(--hairline-maroon);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.input-architectural:focus {
+  border-color: var(--brand-maroon);
+  box-shadow: 0 0 0 3px rgba(90, 18, 31, 0.12);
+}
+
+.input-architectural-dark {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  border-radius: 3px;
+  font-size: 0.875rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.input-architectural-dark:focus {
+  border-color: var(--accent-brass);
+  box-shadow: 0 0 0 3px rgba(176, 133, 48, 0.2);
+}
+
+/* Photo Frames with Curated Elevation */
+.photo-frame-curated {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 1px solid var(--hairline-maroon);
+  box-shadow: 0 4px 16px rgba(90, 18, 31, 0.08);
+}
+
+.photo-frame-curated img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photo-frame-curated:hover img {
+  transform: scale(1.03);
+}
+
+/* Caption Tag */
+.caption-tag-brass {
+  background-color: var(--brand-maroon);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-brass);
+  padding: 0.45rem 0.95rem;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
+/* Floating WhatsApp Button */
+.whatsapp-tactile {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--brand-maroon);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-brass);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 18px rgba(90, 18, 31, 0.3);
+  z-index: 40;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.whatsapp-tactile:hover {
+  background-color: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* Modals */
+.modal-overlay {
+  background-color: rgba(34, 5, 10, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--canvas-alabaster);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4B5B7;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-maroon);
+}

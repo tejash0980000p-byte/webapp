@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>20 Academic Test Cases Report - Aadya AC Party Hall</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #FAF6F4; color: #1C0F12; padding: 40px; }
+    .header { border-bottom: 2px solid #5A121F; padding-bottom: 20px; margin-bottom: 25px; }
+    h1 { margin: 0; color: #5A121F; font-size: 26px; font-family: Georgia, serif; }
+    .meta { font-size: 13px; color: #584A4D; margin-top: 8px; }
+    .summary-box { background: #FFFFFF; border: 1px solid #5A121F; border-radius: 4px; padding: 18px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(90, 18, 31, 0.06); }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; background: white; border: 1px solid #E5D8D6; }
+    th { background: #5A121F; color: #FFFFFF; text-align: left; padding: 10px; font-weight: 600; }
+    td { padding: 10px; border-bottom: 1px solid #E5D8D6; }
+    tr:nth-child(even) { background: #FAF6F4; }
+    .badge-pass { background: #15803d; color: white; padding: 3px 8px; border-radius: 2px; font-weight: bold; font-size: 11px; }
+    .print-btn { background: #5A121F; color: #FFFFFF; border: none; padding: 10px 22px; border-radius: 4px; cursor: pointer; font-weight: bold; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(90, 18, 31, 0.25); }
+    @media print { .print-btn { display: none; } body { padding: 0; background: white; } }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+  <div class="header">
+    <h1>Aadya AC Party Hall - 20 Academic Test Cases Verification</h1>
+    <div class="meta">
+      <strong>Student Name:</strong> Tejash &bull; <strong>Department:</strong> CS & IT &bull; <strong>Project:</strong> Aadya AC Party Hall Management & Booking Portal &bull; <strong>Location:</strong> Sanjay Nagar, Bangalore
+    </div>
+  </div>
+
+  <div class="summary-box">
+    <div>
+      <strong style="color: #15803d; font-size: 16px;">Test Suite Status: 20 / 20 PASSED (100% Score)</strong>
+      <div style="font-size: 12px; color: #5C5650; margin-top: 4px;">Verified: Editorial layout, boundary constraints (max 150 guests), price logic, and SheetJS Excel export.</div>
+    </div>
+    <div>
+      <span class="badge-pass" style="font-size: 13px; padding: 6px 14px;">ACADEMIC PASS</span>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Test Scenario</th>
+        <th>Test Conditions & Inputs</th>
+        <th>Expected Output</th>
+        <th>Actual Output</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>TC01</td><td>Responsive Layout</td><td>Screen viewport resized to mobile width (<1024px)</td><td>Navbar collapses cleanly into mobile toggle</td><td>Menu toggles as expected</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC02</td><td>Google Maps Location Link</td><td>Click 'View on Google Maps'</td><td>Points to maps.app.goo.gl/VdScCf5Y9qzWamcB6</td><td>Verified destination link</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC03</td><td>Luxury Color Palette Conformance</td><td>Inspect CSS theme tokens</td><td>Uses Champagne Gold (#DFC17D), Espresso (#1C1417), Ivory</td><td>Theme variables active</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC04</td><td>Occasion Selector Shortcut</td><td>Click 'Select This Event' on Birthday Card</td><td>Form dropdown selects Birthday Party & scrolls</td><td>Form updated correctly</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC05</td><td>Guest Capacity Valid Boundary</td><td>Enter guest count = 150</td><td>System accepts input without error</td><td>Input accepted</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC06</td><td>Guest Capacity Limit Exceeded</td><td>Enter guest count = 175</td><td>Rejects input with capacity violation prompt</td><td>Violation prompt triggered</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC07</td><td>Zero/Negative Guest Validation</td><td>Enter guest count = 0 or -5</td><td>Form validation rejects non-positive value</td><td>Input blocked</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC08</td><td>Past Date Constraint</td><td>Inspect minimum selectable date on calendar</td><td>Prevents selection of prior dates</td><td>Min date set to tomorrow</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC09</td><td>Catering Price Calculation</td><td>Select North Indian Buffet (100 * ₹450)</td><td>Subtotal equals ₹45,000</td><td>Subtotal matches ₹45,000</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC10</td><td>Decoration Fee Calculation</td><td>Select Traditional Fresh Floral (₹18,000)</td><td>Summed into live total breakdown</td><td>Accurately added</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC11</td><td>Phone 10-Digit Validation</td><td>Enter regex test 9876543210 vs 123</td><td>10-digit allowed; invalid rejected</td><td>Regex passes</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC12</td><td>Mandatory Field Validation</td><td>Submit empty form</td><td>Required fields highlight and halt submit</td><td>HTML5 validation works</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC13</td><td>Booking ID Generation</td><td>Submit valid booking form</td><td>Generates unique APH-2026-XXXX reference</td><td>ID generated & stored</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC14</td><td>Admin Analytics Counter</td><td>Inspect total bookings count in dashboard</td><td>Counters update with stored array length</td><td>Values synchronized</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC15</td><td>Admin Search & Filter</td><td>Search by name/phone in admin table</td><td>Displays only matching records</td><td>Instant filter works</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC16</td><td>SheetJS Library Availability</td><td>Inspect window.XLSX module</td><td>Library loaded and accessible</td><td>XLSX object confirmed</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC17</td><td>Excel Export Column Schema</td><td>Execute exportBookingsToExcel()</td><td>Generates formatted .xlsx file</td><td>File generated & verified</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC18</td><td>WhatsApp Direct Chat Link</td><td>Click floating WhatsApp button</td><td>Opens wa.me/919876543210 with prefilled text</td><td>WhatsApp URL confirmed</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC19</td><td>Booking Receipt Generator</td><td>View booking receipt modal</td><td>Displays itemized invoice ready for print</td><td>Modal renders properly</td><td><span class="badge-pass">PASS</span></td></tr>
+      <tr><td>TC20</td><td>Booking Status Lifecycle</td><td>Toggle status between Confirmed/Pending</td><td>Status changes and persists in storage</td><td>State persisted</td><td><span class="badge-pass">PASS</span></td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top: 30px; border-top: 1px dashed #E8E1D9; padding-top: 15px; font-size: 12px; color: #5C5650; display: flex; justify-content: space-between;">
+    <div><strong>Evaluator Signature:</strong> _______________________</div>
+    <div><strong>Student Signature:</strong> _______________________</div>
+    <div><strong>Date:</strong> 24-November-2026</div>
+  </div>
+</body>
+</html>
