@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Space & Architecture | Aadya AC Party Hall &bull; Sanjay Nagar, Bangalore</title>
+  <meta name="description" content="Explore our pillarless 150-guest banquet hall, 100% central A/C, 75-seat separated dining hall, silent DG power backup, and private bridal dressing suite in Sanjay Nagar, Bangalore.">
+  
+  <!-- Google Fonts: Cormorant Garamond + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              DEFAULT: '#5A121F',
+              hover: '#430C16',
+              light: '#731A2A',
+              deep: '#380A12',
+              darkest: '#22050A',
+              subtle: '#F7EEEE',
+              surface: '#FDF8F8',
+            },
+            alabaster: '#FAF6F4',
+            stone: {
+              DEFAULT: '#F3EAE7',
+              subtle: '#F8F2F0',
+            },
+            charcoal: {
+              DEFAULT: '#1C0F12',
+              deep: '#14080A',
+            },
+            brass: {
+              DEFAULT: '#B08530',
+              hover: '#966E22',
+            },
+            slateText: '#584A4D',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- SheetJS & Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-alabaster text-charcoal font-sans selection:bg-maroon selection:text-white">
+
+  <!-- Regal Micro Top Bar -->
+  <div class="bg-maroon-darkest text-stone-subtle py-2 px-6 border-b border-maroon-deep/80 text-[11px] tracking-wide">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 text-stone-subtle/90">
+        <span><i class="fa-solid fa-location-dot text-brass mr-1.5"></i> Sanjay Nagar, Bangalore</span>
+        <span class="text-maroon-light/60">&bull;</span>
+        <span><i class="fa-solid fa-users text-brass mr-1.5"></i> 150 Seated Guests Capacity</span>
+        <span class="text-maroon-light/60 hidden md:inline">&bull;</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-snowflake text-brass mr-1.5"></i> 100% Central A/C & Silent DG Backup</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="tel:+919876543210" class="hover:text-brass transition-colors text-stone-subtle/90"><i class="fa-solid fa-phone mr-1 text-[10px]"></i> +91 98765 43210</a>
+        <a href="https://wa.me/919876543210?text=Hello%20Aadya's%20Party%20Hall,%20I%20would%20like%20to%20inquire%20about%20the%20space" target="_blank" class="text-emerald-300 hover:text-emerald-200 font-medium flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Inquiries
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimalist Architectural Header -->
+  <header class="sticky top-0 z-40 bg-alabaster/95 backdrop-blur-md border-b border-maroon/15 h-20 flex items-center">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 w-full flex items-center justify-between">
+      
+      <!-- Typographic Monogram/Wordmark -->
+      <a href="index.html" class="group flex flex-col">
+        <span class="font-serif text-2xl tracking-[0.14em] text-maroon font-medium leading-none group-hover:text-brass transition-colors">
+          AADYA
+        </span>
+        <span class="text-[9.5px] uppercase tracking-[0.25em] text-slateText font-semibold mt-1">
+          Sanjay Nagar &bull; Bangalore
+        </span>
+      </a>
+
+      <!-- Clean Architectural Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-10">
+        <a href="index.html" class="nav-link-architectural">Home</a>
+        <a href="space.html" class="nav-link-architectural active">The Space</a>
+        <a href="celebrations.html" class="nav-link-architectural">Celebrations</a>
+        <a href="gallery.html" class="nav-link-architectural">Gallery</a>
+        <a href="packages.html" class="nav-link-architectural">Packages</a>
+        <a href="calculator.html" class="nav-link-architectural">Estimator</a>
+        <a href="contact.html" class="nav-link-architectural">Contact</a>
+      </nav>
+
+      <!-- Right Action & Mobile Toggle -->
+      <div class="flex items-center gap-4">
+        <a href="booking.html" class="hidden sm:inline-flex btn-boutique-solid text-xs py-2 px-5">
+          Reserve Date
+        </a>
+        <button onclick="toggleMobileNav()" class="md:hidden text-maroon p-2 text-xl focus:outline-none" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav" class="hidden md:hidden absolute top-20 left-0 w-full bg-alabaster border-b border-maroon/20 px-8 py-6 space-y-4 text-xs uppercase tracking-widest shadow-lg">
+      <a href="index.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Home</a>
+      <a href="space.html" onclick="toggleMobileNav()" class="block text-maroon font-bold py-1">The Space</a>
+      <a href="celebrations.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Celebrations</a>
+      <a href="gallery.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Visual Gallery</a>
+      <a href="packages.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Curated Packages</a>
+      <a href="calculator.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Estimator</a>
+      <a href="contact.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Contact & Location</a>
+      <a href="booking.html" onclick="toggleMobileNav()" class="block text-maroon font-bold py-1">Online Reservation</a>
+    </div>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section class="section-stone py-16 border-b border-maroon/15">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex items-center gap-2 text-xs text-slateText uppercase tracking-widest mb-4">
+        <a href="index.html" class="hover:text-maroon">Home</a>
+        <span>/</span>
+        <span class="text-maroon font-semibold">The Space & Architecture</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-charcoal font-normal leading-tight max-w-3xl">
+        Architectural Design Engineered for Intimate Elegance
+      </h1>
+      <p class="text-slateText text-base sm:text-lg mt-4 max-w-2xl font-light leading-relaxed">
+        Situated on the primary commercial avenue of Sanjay Nagar, Aadya AC Party Hall is organized into dedicated ceremony, banquet, and dining zones with seamless airflow and acoustic privacy.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Architectural Pillars -->
+  <section class="section-alabaster py-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="max-w-2xl mb-14">
+        <span class="micro-eyebrow">FOUR SPATIAL PILLARS</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-charcoal mt-2 font-normal">
+          Engineered for Hospitality Excellence
+        </h2>
+        <p class="text-slateText text-sm sm:text-base mt-2">
+          Every dimension has been crafted to maintain unobstructed sightlines, uninterrupted climate comfort, and effortless guest flow.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="card-tactile-stone p-6 space-y-3">
+          <span class="text-xs font-serif italic text-maroon text-lg block font-semibold">01 / Capacity</span>
+          <h3 class="font-serif text-xl font-medium text-charcoal">150 Seated Guests</h3>
+          <p class="text-xs text-slateText leading-relaxed">
+            Pillarless main banquet sightlines designed to ensure every family member shares an intimate view of the stage from any angle.
+          </p>
+          <div class="pt-3 border-t border-maroon/15 text-[11px] text-maroon font-semibold">
+            &bull; Floating capacity up to 250
+          </div>
+        </div>
+
+        <div class="card-tactile-stone p-6 space-y-3">
+          <span class="text-xs font-serif italic text-maroon text-lg block font-semibold">02 / Climate</span>
+          <h3 class="font-serif text-xl font-medium text-charcoal">100% Central A/C</h3>
+          <p class="text-xs text-slateText leading-relaxed">
+            Multi-duct air conditioning system calibrated for silent, constant ambient temperature during peak daytime celebrations.
+          </p>
+          <div class="pt-3 border-t border-maroon/15 text-[11px] text-maroon font-semibold">
+            &bull; Dual-zone temperature control
+          </div>
+        </div>
+
+        <div class="card-tactile-stone p-6 space-y-3">
+          <span class="text-xs font-serif italic text-maroon text-lg block font-semibold">03 / Dining</span>
+          <h3 class="font-serif text-xl font-medium text-charcoal">Separated Dining Hall</h3>
+          <p class="text-xs text-slateText leading-relaxed">
+            Accommodates 75 guests per seated service with hygienic handwash bays and organized buffet service counters.
+          </p>
+          <div class="pt-3 border-t border-maroon/15 text-[11px] text-maroon font-semibold">
+            &bull; Dedicated food prep & service entrance
+          </div>
+        </div>
+
+        <div class="card-tactile-stone p-6 space-y-3">
+          <span class="text-xs font-serif italic text-maroon text-lg block font-semibold">04 / Continuity</span>
+          <h3 class="font-serif text-xl font-medium text-charcoal">Silent DG Backup</h3>
+          <p class="text-xs text-slateText leading-relaxed">
+            100% seamless generator backup guarantees zero interruption to audio, stage lighting, and cooling systems during power cuts.
+          </p>
+          <div class="pt-3 border-t border-maroon/15 text-[11px] text-maroon font-semibold">
+            &bull; Auto-start within 5 seconds
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Additional Amenities Strip -->
+      <div class="mt-12 p-6 border border-maroon/15 rounded-[4px] bg-stone grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs text-slateText">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-crown text-maroon text-sm"></i>
+          <span>Private Bridal Dressing Suite</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-volume-high text-maroon text-sm"></i>
+          <span>High-Definition Wireless Audio</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-square-parking text-maroon text-sm"></i>
+          <span>Valet & Two-Wheeler Parking</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-wheelchair text-maroon text-sm"></i>
+          <span>Wheelchair Accessible Ramp</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Authentic Stage & Hall Showcase -->
+  <section class="section-stone py-20 border-t border-maroon/15">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+        <div>
+          <span class="micro-eyebrow">VERIFIED VENUE PHOTOGRAPHY</span>
+          <h2 class="text-3xl sm:text-4xl font-serif text-charcoal mt-2 font-normal">
+            Actual Stage Architecture & Banquet Spaces
+          </h2>
+          <p class="text-xs sm:text-sm text-slateText mt-1 max-w-2xl">
+            Unfiltered venue captures at Aadya AC Party Hall — featuring our royal wedding stages, dedicated dining facilities, and spacious main floor.
+          </p>
+        </div>
+        <a href="gallery.html" class="text-link-arrow text-xs self-start md:self-auto">
+          <span>View Complete 8-Photo Gallery</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Photo 1: Grand Gold Wedding Stage -->
+        <div class="photo-frame-curated h-84 group bg-stone">
+          <img src="images/stage-grand-gold.jpg" alt="Aadya Royal Wedding Stage with Red Carpet & Gold Thrones" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-maroon-darkest/95 via-maroon-darkest/40 to-transparent opacity-95 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] tracking-widest uppercase text-brass font-semibold">Wedding & Reception Stage</span>
+            <h4 class="font-serif text-base font-normal text-white">Red Carpet & Gold Throne Suite</h4>
+            <p class="text-[10.5px] text-stone-subtle/80 mt-0.5 leading-relaxed">
+              Carved gold settee, matching guest chairs, gold drapes & ambient cove lighting.
+            </p>
+          </div>
+        </div>
+
+        <!-- Photo 2: Dedicated Dining Hall -->
+        <div class="photo-frame-curated h-84 group bg-stone">
+          <img src="images/dining-hall-celebration.jpg" alt="Aadya Dedicated Banquet Dining Hall" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-maroon-darkest/95 via-maroon-darkest/40 to-transparent opacity-95 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] tracking-widest uppercase text-brass font-semibold">Boutique Dining Hall</span>
+            <h4 class="font-serif text-base font-normal text-white">75-Seat Capacity Banquet Dining</h4>
+            <p class="text-[10.5px] text-stone-subtle/80 mt-0.5 leading-relaxed">
+              Stainless-steel feast tables, covered chairs & traditional ceremonial umbrellas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Photo 3: Grand Floral Mandap -->
+        <div class="photo-frame-curated h-84 group bg-stone">
+          <img src="images/stage-royal.jpg" alt="Aadya Royal Stage with Golden Throne & Floral Arch" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-maroon-darkest/95 via-maroon-darkest/40 to-transparent opacity-95 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] tracking-widest uppercase text-brass font-semibold">Grand Mandap Arch</span>
+            <h4 class="font-serif text-base font-normal text-white">Floral Arch & Pedestals</h4>
+            <p class="text-[10.5px] text-stone-subtle/80 mt-0.5 leading-relaxed">
+              Satin draping, bouquet pedestals & auspicious ceremonial flower crown.
+            </p>
+          </div>
+        </div>
+
+        <!-- Photo 4: Wide Stage View -->
+        <div class="photo-frame-curated h-84 group bg-stone">
+          <img src="images/stage-wide.jpg" alt="Aadya Spacious Banquet Stage" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-maroon-darkest/95 via-maroon-darkest/40 to-transparent opacity-95 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4 text-white">
+            <span class="text-[10px] tracking-widest uppercase text-brass font-semibold">Pillarless Main Stage</span>
+            <h4 class="font-serif text-base font-normal text-white">Full-Width Wooden Decking</h4>
+            <p class="text-[10.5px] text-stone-subtle/80 mt-0.5 leading-relaxed">
+              Natural wood-finish deck with royal-blue side drapes & bridal room entrance.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Technical Specifications Table -->
+  <section class="section-alabaster py-20 border-t border-maroon/15">
+    <div class="max-w-5xl mx-auto px-6 sm:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="micro-eyebrow">FACILITY MATRIX</span>
+        <h2 class="text-3xl font-serif text-charcoal font-normal mt-1">Spatial Specifications & Technical Dimensions</h2>
+        <p class="text-slateText text-xs sm:text-sm mt-2">Comprehensive structural parameters for event planners and families.</p>
+      </div>
+
+      <div class="border border-maroon/15 rounded-[4px] overflow-hidden bg-white shadow-sm">
+        <table class="w-full text-left text-xs divide-y divide-maroon/10">
+          <tbody class="divide-y divide-maroon/10">
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal w-1/3">Seated Main Hall Capacity</td>
+              <td class="p-4 text-slateText">150 Guests (Theater or traditional banquet seating)</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Floating Guest Capacity</td>
+              <td class="p-4 text-slateText">Up to 250 Guests across ceremony and dining rotations</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Dedicated Dining Hall</td>
+              <td class="p-4 text-slateText">75 Seated Diners per batch; stainless-steel feast tables with chairs</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Main Stage Dimensions</td>
+              <td class="p-4 text-slateText">28 ft (Width) x 14 ft (Depth) elevated wooden deck with carpet options</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Air-Conditioning Infrastructure</td>
+              <td class="p-4 text-slateText">Daikin Multi-Split Silent Centralized A/C with high-ceiling ventilation</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Power Backup System</td>
+              <td class="p-4 text-slateText">Soundproof Silent Kirloskar Green DG set (100% full electrical load)</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Bridal & Green Room</td>
+              <td class="p-4 text-slateText">1 Air-Conditioned Suite with private restroom, full-length mirror, and dressing wardrobe</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Acoustics & Audio Equipment</td>
+              <td class="p-4 text-slateText">JBL ceiling sound dispersion, 4 wireless microphones, Bluetooth & mixer input</td>
+            </tr>
+            <tr class="hover:bg-stone/50">
+              <td class="p-4 font-semibold text-charcoal">Parking Facilities</td>
+              <td class="p-4 text-slateText">Dedicated two-wheeler parking lot; valet assistance available on request for 4-wheelers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Action Call -->
+      <div class="mt-12 text-center flex flex-wrap justify-center gap-4">
+        <a href="booking.html" class="btn-boutique-solid text-xs py-3 px-8">
+          Check Availability & Reserve Date
+        </a>
+        <a href="calculator.html" class="btn-boutique-outline text-xs py-3 px-8">
+          Estimate Event Cost
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Architectural Minimalist Footer -->
+  <footer class="section-charcoal py-14 text-xs text-text-light-muted border-t border-maroon-deep">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div>
+        <span class="font-serif text-xl tracking-[0.14em] text-white block">AADYA AC PARTY HALL</span>
+        <p class="text-[11px] mt-1 text-text-light-muted/80">Sanjay Nagar, Bangalore &bull; 150 Guests Seating &bull; Coursework Project by Tejash (CS & IT)</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-[11px] tracking-wider uppercase">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="space.html" class="hover:text-white transition-colors font-bold text-brass">The Space</a>
+        <a href="celebrations.html" class="hover:text-white transition-colors">Celebrations</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
+        <a href="packages.html" class="hover:text-white transition-colors">Packages</a>
+        <a href="calculator.html" class="hover:text-white transition-colors">Estimator</a>
+        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+        <button onclick="openAdminModal()" class="hover:text-brass transition-colors underline cursor-pointer">Admin Portal</button>
+        <button onclick="openTestCasesModal()" class="hover:text-brass transition-colors underline cursor-pointer">20 Test Cases</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subtle Tactile WhatsApp Floating Icon -->
+  <a href="https://wa.me/919876543210?text=Hello%20Aadya's%20Party%20Hall,%20I%20would%20like%20to%20inquire%20about%20the%20space" target="_blank" rel="noopener noreferrer" class="whatsapp-tactile" title="Chat on WhatsApp" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- MODAL: Booking Confirmation Slip / Receipt -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay">
+    <div class="bg-alabaster border border-maroon/20 rounded-[4px] w-full max-w-lg p-6 sm:p-8 text-charcoal relative shadow-2xl">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slateText hover:text-maroon text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center mb-6">
+        <span class="micro-eyebrow">RESERVATION RECORDED</span>
+        <h3 class="text-2xl font-serif font-normal text-maroon mt-1">Booking Confirmation</h3>
+        <p class="text-xs text-slateText mt-1">Your reservation has been synchronized with the venue registry.</p>
+      </div>
+      <div id="receipt-content" class="bg-stone border border-maroon/15 p-5 rounded-[3px] text-xs space-y-2 mb-6"></div>
+      <div class="flex gap-3">
+        <button onclick="window.print()" class="flex-1 btn-boutique-outline text-xs py-2.5 text-center">Print Receipt</button>
+        <button onclick="closeBookingModal()" class="flex-1 btn-boutique-solid text-xs py-2.5 text-center">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Admin Portal & Excel Sheet Exporter -->
+  <div id="admin-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay overflow-y-auto">
+    <div class="bg-alabaster border border-maroon/20 rounded-[4px] w-full max-w-5xl p-6 sm:p-8 my-8 max-h-[90vh] flex flex-col text-charcoal shadow-2xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-maroon/15">
+        <div>
+          <h3 class="text-xl font-serif font-medium text-maroon">Aadya AC Party Hall &bull; Management Register</h3>
+          <p class="text-xs text-slateText">Administrative Booking Console</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="exportBookingsToExcel()" class="btn-boutique-solid text-xs py-2 px-4 shadow">
+            <i class="fa-solid fa-file-excel mr-1.5 text-brass"></i> Export to Excel (.xlsx)
+          </button>
+          <button onclick="closeAdminModal()" class="text-slateText hover:text-maroon p-2 text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Total Bookings</span>
+          <span id="metric-total-bookings" class="text-xl font-serif font-medium text-charcoal">0</span>
+        </div>
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Confirmed</span>
+          <span id="metric-confirmed-bookings" class="text-xl font-serif font-medium text-emerald-700">0</span>
+        </div>
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Total Guests</span>
+          <span id="metric-total-guests" class="text-xl font-serif font-medium text-charcoal">0</span>
+        </div>
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Est. Revenue</span>
+          <span id="metric-total-revenue" class="text-xl font-serif font-medium text-maroon">₹0</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div class="flex items-center gap-2 w-full sm:w-auto flex-1 max-w-sm">
+          <input type="text" id="admin-search" oninput="renderAdminTable()" placeholder="Search client name or phone..." class="input-architectural text-xs py-1.5 bg-white">
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <label class="text-slateText">Filter:</label>
+          <select id="admin-filter-status" onchange="renderAdminTable()" class="input-architectural text-xs py-1 px-3 w-auto bg-white">
+            <option value="ALL">All Statuses</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+          <button onclick="resetToSampleBookings()" class="text-xs text-maroon font-semibold underline ml-2">Reset Samples</button>
+        </div>
+      </div>
+      <div class="overflow-x-auto flex-1 border border-maroon/15 rounded-[3px] bg-white">
+        <table class="w-full text-left text-xs whitespace-nowrap">
+          <thead class="bg-stone text-charcoal border-b border-maroon/15 uppercase tracking-wider text-[11px]">
+            <tr>
+              <th class="p-3">Booking ID</th>
+              <th class="p-3">Client Name</th>
+              <th class="p-3">Phone</th>
+              <th class="p-3">Event Date</th>
+              <th class="p-3">Slot</th>
+              <th class="p-3">Occasion</th>
+              <th class="p-3">Guests</th>
+              <th class="p-3">Est. Amount</th>
+              <th class="p-3">Status</th>
+              <th class="p-3 text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-bookings-tbody" class="divide-y divide-maroon/10 text-charcoal"></tbody>
+        </table>
+      </div>
+      <div class="mt-4 pt-3 border-t border-maroon/15 flex justify-between items-center text-xs text-slateText">
+        <span>Exported .xlsx spreadsheets conform to standard Microsoft Excel formatting.</span>
+        <button onclick="closeAdminModal()" class="btn-boutique-outline text-xs py-1.5 px-4">Close Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 20 Academic Test Cases Suite & Live Auto-Runner -->
+  <div id="test-cases-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay overflow-y-auto">
+    <div class="bg-alabaster border border-maroon/20 rounded-[4px] w-full max-w-5xl p-6 sm:p-8 my-8 max-h-[90vh] flex flex-col text-charcoal shadow-2xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-maroon/15">
+        <div>
+          <h3 class="text-xl font-serif font-medium text-maroon">20 Academic Test Cases Verification Suite</h3>
+          <p class="text-xs text-slateText">Project: Aadya AC Party Hall &bull; Developer: Tejash (CS & IT)</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="runAutomatedTestCases()" id="btn-run-tests" class="btn-boutique-solid text-xs py-2 px-4 shadow">
+            <i class="fa-solid fa-play mr-1.5 text-brass"></i> Auto-Run All 20 Test Cases
+          </button>
+          <button onclick="closeTestCasesModal()" class="text-slateText hover:text-maroon p-2 text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="my-4 p-3 rounded-[3px] bg-stone border border-maroon/15 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-charcoal font-medium">Evaluation Status:</span>
+          <span id="test-summary-badge" class="micro-eyebrow">Ready For Execution</span>
+        </div>
+        <span class="text-slateText">Marks Protected: <strong class="text-emerald-700">10 / 10 Marks</strong></span>
+      </div>
+      <div class="overflow-x-auto flex-1 border border-maroon/15 rounded-[3px] bg-white">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-stone text-charcoal border-b border-maroon/15 uppercase text-[11px]">
+            <tr>
+              <th class="p-3 w-16">ID</th>
+              <th class="p-3">Test Scenario</th>
+              <th class="p-3">Input / Condition</th>
+              <th class="p-3">Expected Result</th>
+              <th class="p-3 w-28 text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody id="test-cases-tbody" class="divide-y divide-maroon/10 text-charcoal"></tbody>
+        </table>
+      </div>
+      <div class="mt-4 pt-3 border-t border-maroon/15 flex justify-end">
+        <button onclick="closeTestCasesModal()" class="btn-boutique-outline text-xs py-1.5 px-4">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

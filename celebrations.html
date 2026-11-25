@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celebrations & Occasions | Aadya AC Party Hall &bull; Sanjay Nagar, Bangalore</title>
+  <meta name="description" content="Host weddings, receptions, birthdays, naming ceremonies (namakarana), engagements, upanayana, and corporate events at Aadya AC Party Hall in Sanjay Nagar, Bangalore.">
+  
+  <!-- Google Fonts: Cormorant Garamond + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            maroon: {
+              DEFAULT: '#5A121F',
+              hover: '#430C16',
+              light: '#731A2A',
+              deep: '#380A12',
+              darkest: '#22050A',
+              subtle: '#F7EEEE',
+              surface: '#FDF8F8',
+            },
+            alabaster: '#FAF6F4',
+            stone: {
+              DEFAULT: '#F3EAE7',
+              subtle: '#F8F2F0',
+            },
+            charcoal: {
+              DEFAULT: '#1C0F12',
+              deep: '#14080A',
+            },
+            brass: {
+              DEFAULT: '#B08530',
+              hover: '#966E22',
+            },
+            slateText: '#584A4D',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- SheetJS & Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-alabaster text-charcoal font-sans selection:bg-maroon selection:text-white">
+
+  <!-- Regal Micro Top Bar -->
+  <div class="bg-maroon-darkest text-stone-subtle py-2 px-6 border-b border-maroon-deep/80 text-[11px] tracking-wide">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-3 sm:gap-4 text-stone-subtle/90">
+        <span><i class="fa-solid fa-location-dot text-brass mr-1.5"></i> Sanjay Nagar, Bangalore</span>
+        <span class="text-maroon-light/60">&bull;</span>
+        <span><i class="fa-solid fa-users text-brass mr-1.5"></i> 150 Seated Guests Capacity</span>
+        <span class="text-maroon-light/60 hidden md:inline">&bull;</span>
+        <span class="hidden md:inline"><i class="fa-solid fa-snowflake text-brass mr-1.5"></i> 100% Central A/C & Silent DG Backup</span>
+      </div>
+      <div class="flex items-center gap-4 text-xs">
+        <a href="tel:+919876543210" class="hover:text-brass transition-colors text-stone-subtle/90"><i class="fa-solid fa-phone mr-1 text-[10px]"></i> +91 98765 43210</a>
+        <a href="https://wa.me/919876543210?text=Hello%20Aadya's%20Party%20Hall,%20I%20would%20like%20to%20inquire%20about%20hosting%20an%20event" target="_blank" class="text-emerald-300 hover:text-emerald-200 font-medium flex items-center gap-1.5">
+          <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Inquiries
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Minimalist Architectural Header -->
+  <header class="sticky top-0 z-40 bg-alabaster/95 backdrop-blur-md border-b border-maroon/15 h-20 flex items-center">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 w-full flex items-center justify-between">
+      
+      <a href="index.html" class="group flex flex-col">
+        <span class="font-serif text-2xl tracking-[0.14em] text-maroon font-medium leading-none group-hover:text-brass transition-colors">
+          AADYA
+        </span>
+        <span class="text-[9.5px] uppercase tracking-[0.25em] text-slateText font-semibold mt-1">
+          Sanjay Nagar &bull; Bangalore
+        </span>
+      </a>
+
+      <!-- Clean Architectural Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 lg:gap-10">
+        <a href="index.html" class="nav-link-architectural">Home</a>
+        <a href="space.html" class="nav-link-architectural">The Space</a>
+        <a href="celebrations.html" class="nav-link-architectural active">Celebrations</a>
+        <a href="gallery.html" class="nav-link-architectural">Gallery</a>
+        <a href="packages.html" class="nav-link-architectural">Packages</a>
+        <a href="calculator.html" class="nav-link-architectural">Estimator</a>
+        <a href="contact.html" class="nav-link-architectural">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="booking.html" class="hidden sm:inline-flex btn-boutique-solid text-xs py-2 px-5">
+          Reserve Date
+        </a>
+        <button onclick="toggleMobileNav()" class="md:hidden text-maroon p-2 text-xl focus:outline-none" aria-label="Toggle Navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-nav" class="hidden md:hidden absolute top-20 left-0 w-full bg-alabaster border-b border-maroon/20 px-8 py-6 space-y-4 text-xs uppercase tracking-widest shadow-lg">
+      <a href="index.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Home</a>
+      <a href="space.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">The Space</a>
+      <a href="celebrations.html" onclick="toggleMobileNav()" class="block text-maroon font-bold py-1">Celebrations</a>
+      <a href="gallery.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Visual Gallery</a>
+      <a href="packages.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Curated Packages</a>
+      <a href="calculator.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Estimator</a>
+      <a href="contact.html" onclick="toggleMobileNav()" class="block text-charcoal hover:text-maroon py-1">Contact & Location</a>
+      <a href="booking.html" onclick="toggleMobileNav()" class="block text-maroon font-bold py-1">Online Reservation</a>
+    </div>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section class="section-stone py-16 border-b border-maroon/15">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      <div class="flex items-center gap-2 text-xs text-slateText uppercase tracking-widest mb-4">
+        <a href="index.html" class="hover:text-maroon">Home</a>
+        <span>/</span>
+        <span class="text-maroon font-semibold">Celebrations & Occasions</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-serif text-charcoal font-normal leading-tight max-w-3xl">
+        Every Milestone Deserves an Exquisite Setting
+      </h1>
+      <p class="text-slateText text-base sm:text-lg mt-4 max-w-2xl font-light leading-relaxed">
+        From sacred Vedic rituals and intimate weddings to milestone anniversaries and executive conferences, our venue adapts seamlessly with specialized stage themes and culinary arrangements.
+      </p>
+    </div>
+  </section>
+
+  <!-- Celebrations Grid -->
+  <section class="section-alabaster py-20">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Occasion 1: Weddings & Receptions -->
+        <div class="card-tactile-white overflow-hidden flex flex-col justify-between">
+          <div class="h-56 overflow-hidden relative border-b border-maroon/15">
+            <img src="images/stage-grand-gold.jpg" alt="Weddings & Receptions Stage Setup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <span class="absolute top-3 left-3 bg-maroon text-white text-[9.5px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded shadow">
+              Tradition & Union
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-normal text-charcoal mb-2">Weddings & Receptions</h3>
+              <p class="text-xs text-slateText leading-relaxed mb-4">
+                Grand red-carpet stage with triple royal gold thrones, satin drapes, cove lighting, private bridal suite access, and multi-course royal feasts.
+              </p>
+              <ul class="text-[11px] text-slateText space-y-1 mb-6 border-t border-maroon/10 pt-3">
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Pillarless 150-guest audience sightlines</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Private air-conditioned bridal green room</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Separate 75-seat banquet dining hall</li>
+              </ul>
+            </div>
+            <button onclick="selectEventForBooking('Wedding & Reception')" class="btn-boutique-solid w-full text-xs py-2.5 text-center">
+              <span>Book Wedding / Reception</span>
+              <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Occasion 2: Birthdays & Anniversaries -->
+        <div class="card-tactile-white overflow-hidden flex flex-col justify-between">
+          <div class="h-56 overflow-hidden relative border-b border-maroon/15">
+            <img src="images/dining-hall-celebration.jpg" alt="Birthdays & Milestone Celebration Setup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <span class="absolute top-3 left-3 bg-maroon text-white text-[9.5px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded shadow">
+              Milestones
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-normal text-charcoal mb-2">Birthdays & Anniversaries</h3>
+              <p class="text-xs text-slateText leading-relaxed mb-4">
+                Balloon & themed stage installations, ceremonial umbrellas, customized moniker banners, dance floor space, and live snack counters.
+              </p>
+              <ul class="text-[11px] text-slateText space-y-1 mb-6 border-t border-maroon/10 pt-3">
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Custom birthday moniker neon backdrops</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> High-definition party audio & wireless mics</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Live chaat, mocktail, & dessert counters</li>
+              </ul>
+            </div>
+            <button onclick="selectEventForBooking('Birthday Party')" class="btn-boutique-solid w-full text-xs py-2.5 text-center">
+              <span>Book Birthday / Anniversary</span>
+              <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Occasion 3: Naming Ceremony -->
+        <div class="card-tactile-white overflow-hidden flex flex-col justify-between">
+          <div class="h-56 overflow-hidden relative border-b border-maroon/15">
+            <img src="images/stage-floral.jpg" alt="Naming Ceremony Floral Setup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <span class="absolute top-3 left-3 bg-maroon text-white text-[9.5px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded shadow">
+              Auspicious Welcomes
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-normal text-charcoal mb-2">Naming Ceremony (Namakarana)</h3>
+              <p class="text-xs text-slateText leading-relaxed mb-4">
+                Decorated natural flower cradles, sacred havan setup, and comfortable, temperature-controlled seating for elders, mothers, and newborns.
+              </p>
+              <ul class="text-[11px] text-slateText space-y-1 mb-6 border-t border-maroon/10 pt-3">
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Traditional brass cradle or fresh floral cradle</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Havan smoke ventilation accommodations</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Authentic South Indian satvik leaf feast options</li>
+              </ul>
+            </div>
+            <button onclick="selectEventForBooking('Naming Ceremony (Namakarana)')" class="btn-boutique-solid w-full text-xs py-2.5 text-center">
+              <span>Book Naming Ceremony</span>
+              <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Occasion 4: Engagements -->
+        <div class="card-tactile-white overflow-hidden flex flex-col justify-between">
+          <div class="h-56 overflow-hidden relative border-b border-maroon/15">
+            <img src="images/stage-royal.jpg" alt="Engagements & Ring Ceremony Setup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <span class="absolute top-3 left-3 bg-maroon text-white text-[9.5px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded shadow">
+              The Vow
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-normal text-charcoal mb-2">Engagements & Ring Ceremonies</h3>
+              <p class="text-xs text-slateText leading-relaxed mb-4">
+                Contemporary romantic floral mandap with satin drapery, bouquet pedestals, welcome easels, and curated welcome mocktail counters.
+              </p>
+              <ul class="text-[11px] text-slateText space-y-1 mb-6 border-t border-maroon/10 pt-3">
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Circular floral arch & dual couple chairs</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Welcome easel board with customized signage</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> North & South Indian fusion buffet menus</li>
+              </ul>
+            </div>
+            <button onclick="selectEventForBooking('Engagement / Ring Ceremony')" class="btn-boutique-solid w-full text-xs py-2.5 text-center">
+              <span>Book Engagement Ceremony</span>
+              <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Occasion 5: Upanayana & Pujas -->
+        <div class="card-tactile-white overflow-hidden flex flex-col justify-between">
+          <div class="h-56 overflow-hidden relative border-b border-maroon/15">
+            <img src="images/stage-wide.jpg" alt="Upanayana & Traditional Pujas Setup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <span class="absolute top-3 left-3 bg-maroon text-white text-[9.5px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded shadow">
+              Sacred Rites
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-normal text-charcoal mb-2">Upanayana & Religious Pujas</h3>
+              <p class="text-xs text-slateText leading-relaxed mb-4">
+                Equipped with homa smoke exhaust fans, priest hospitality quarters, and traditional banana-leaf satvik feast dining arrangements.
+              </p>
+              <ul class="text-[11px] text-slateText space-y-1 mb-6 border-t border-maroon/10 pt-3">
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Dedicated sacred fire pit arrangement</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Traditional banana-leaf meal seating for 75</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Early morning 06:30 AM auspicious access</li>
+              </ul>
+            </div>
+            <button onclick="selectEventForBooking('Upanayana / Traditional Pooja')" class="btn-boutique-solid w-full text-xs py-2.5 text-center">
+              <span>Book Puja / Upanayana</span>
+              <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Occasion 6: Corporate Events -->
+        <div class="card-tactile-white overflow-hidden flex flex-col justify-between">
+          <div class="h-56 overflow-hidden relative border-b border-maroon/15">
+            <img src="images/reception.jpg" alt="Corporate Conclaves & Seminars Setup" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+            <span class="absolute top-3 left-3 bg-maroon text-white text-[9.5px] uppercase tracking-wider font-semibold px-2.5 py-1 rounded shadow">
+              Conferences
+            </span>
+          </div>
+          <div class="p-6 flex-1 flex flex-col justify-between">
+            <div>
+              <h3 class="font-serif text-2xl font-normal text-charcoal mb-2">Corporate Conclaves & Seminars</h3>
+              <p class="text-xs text-slateText leading-relaxed mb-4">
+                Full HD projector display, high-speed Wi-Fi, podium, wireless collar mics, executive lunch buffet packages, and theater seating up to 150.
+              </p>
+              <ul class="text-[11px] text-slateText space-y-1 mb-6 border-t border-maroon/10 pt-3">
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Projector, screen & high-fidelity sound</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> High-speed Wi-Fi & presenter podium</li>
+                <li><i class="fa-solid fa-check text-maroon mr-1.5"></i> Morning tea/coffee with executive lunch</li>
+              </ul>
+            </div>
+            <button onclick="selectEventForBooking('Corporate Event / Seminar')" class="btn-boutique-solid w-full text-xs py-2.5 text-center">
+              <span>Book Corporate Event</span>
+              <i class="fa-solid fa-arrow-right-long text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comprehensive Planning Services -->
+  <section class="section-stone py-20 border-t border-maroon/15">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="micro-eyebrow">CONCIERGE SERVICES</span>
+        <h2 class="text-3xl sm:text-4xl font-serif text-charcoal mt-2 font-normal">
+          Full In-House Event Support
+        </h2>
+        <p class="text-slateText text-xs sm:text-sm mt-2">
+          Simplify your occasion planning with our trusted vendor network and venue managers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="bg-white p-6 rounded-[4px] border border-maroon/15 space-y-2">
+          <div class="w-10 h-10 rounded-full bg-maroon/10 text-maroon flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h4 class="font-serif text-charcoal text-lg font-medium">Bespoke Floral Artists</h4>
+          <p class="text-xs text-slateText leading-relaxed">
+            Custom fresh Bangalore flower mandaps, entryway arches, marigold garlands, and cradle ornamentation.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-[4px] border border-maroon/15 space-y-2">
+          <div class="w-10 h-10 rounded-full bg-maroon/10 text-maroon flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h4 class="font-serif text-charcoal text-lg font-medium">Master Banquet Chefs</h4>
+          <p class="text-xs text-slateText leading-relaxed">
+            South Indian traditional satvik meals, authentic North Indian buffets, and royal dum biryani non-veg spreads.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-[4px] border border-maroon/15 space-y-2">
+          <div class="w-10 h-10 rounded-full bg-maroon/10 text-maroon flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-camera-retro"></i>
+          </div>
+          <h4 class="font-serif text-charcoal text-lg font-medium">Photo & 4K Cinematography</h4>
+          <p class="text-xs text-slateText leading-relaxed">
+            Experienced wedding and event photographers familiar with our venue lighting and optimal stage angles.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-[4px] border border-maroon/15 space-y-2">
+          <div class="w-10 h-10 rounded-full bg-maroon/10 text-maroon flex items-center justify-center text-lg mb-3">
+            <i class="fa-solid fa-music"></i>
+          </div>
+          <h4 class="font-serif text-charcoal text-lg font-medium">Sound & DJ Accompaniment</h4>
+          <p class="text-xs text-slateText leading-relaxed">
+            Calibrated acoustics, classical nadaswaram audio, birthday party DJ setups, and mood cove lighting.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-14 text-center">
+        <a href="booking.html" class="btn-boutique-solid text-xs py-3 px-8">
+          Check Available Dates for Your Occasion
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Architectural Minimalist Footer -->
+  <footer class="section-charcoal py-14 text-xs text-text-light-muted border-t border-maroon-deep">
+    <div class="max-w-7xl mx-auto px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+      <div>
+        <span class="font-serif text-xl tracking-[0.14em] text-white block">AADYA AC PARTY HALL</span>
+        <p class="text-[11px] mt-1 text-text-light-muted/80">Sanjay Nagar, Bangalore &bull; 150 Guests Seating &bull; Coursework Project by Tejash (CS & IT)</p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-[11px] tracking-wider uppercase">
+        <a href="index.html" class="hover:text-white transition-colors">Home</a>
+        <a href="space.html" class="hover:text-white transition-colors">The Space</a>
+        <a href="celebrations.html" class="hover:text-white transition-colors font-bold text-brass">Celebrations</a>
+        <a href="gallery.html" class="hover:text-white transition-colors">Gallery</a>
+        <a href="packages.html" class="hover:text-white transition-colors">Packages</a>
+        <a href="calculator.html" class="hover:text-white transition-colors">Estimator</a>
+        <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+        <button onclick="openAdminModal()" class="hover:text-brass transition-colors underline cursor-pointer">Admin Portal</button>
+        <button onclick="openTestCasesModal()" class="hover:text-brass transition-colors underline cursor-pointer">20 Test Cases</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subtle Tactile WhatsApp Floating Icon -->
+  <a href="https://wa.me/919876543210?text=Hello%20Aadya's%20Party%20Hall,%20I%20would%20like%20to%20inquire%20about%20hosting%20an%20event" target="_blank" rel="noopener noreferrer" class="whatsapp-tactile" title="Chat on WhatsApp" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- MODAL: Booking Confirmation Slip / Receipt -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay">
+    <div class="bg-alabaster border border-maroon/20 rounded-[4px] w-full max-w-lg p-6 sm:p-8 text-charcoal relative shadow-2xl">
+      <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-slateText hover:text-maroon text-lg">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="text-center mb-6">
+        <span class="micro-eyebrow">RESERVATION RECORDED</span>
+        <h3 class="text-2xl font-serif font-normal text-maroon mt-1">Booking Confirmation</h3>
+        <p class="text-xs text-slateText mt-1">Your reservation has been synchronized with the venue registry.</p>
+      </div>
+      <div id="receipt-content" class="bg-stone border border-maroon/15 p-5 rounded-[3px] text-xs space-y-2 mb-6"></div>
+      <div class="flex gap-3">
+        <button onclick="window.print()" class="flex-1 btn-boutique-outline text-xs py-2.5 text-center">Print Receipt</button>
+        <button onclick="closeBookingModal()" class="flex-1 btn-boutique-solid text-xs py-2.5 text-center">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Admin Portal & Excel Sheet Exporter -->
+  <div id="admin-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay overflow-y-auto">
+    <div class="bg-alabaster border border-maroon/20 rounded-[4px] w-full max-w-5xl p-6 sm:p-8 my-8 max-h-[90vh] flex flex-col text-charcoal shadow-2xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-maroon/15">
+        <div>
+          <h3 class="text-xl font-serif font-medium text-maroon">Aadya AC Party Hall &bull; Management Register</h3>
+          <p class="text-xs text-slateText">Administrative Booking Console</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="exportBookingsToExcel()" class="btn-boutique-solid text-xs py-2 px-4 shadow">
+            <i class="fa-solid fa-file-excel mr-1.5 text-brass"></i> Export to Excel (.xlsx)
+          </button>
+          <button onclick="closeAdminModal()" class="text-slateText hover:text-maroon p-2 text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 my-4">
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Total Bookings</span>
+          <span id="metric-total-bookings" class="text-xl font-serif font-medium text-charcoal">0</span>
+        </div>
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Confirmed</span>
+          <span id="metric-confirmed-bookings" class="text-xl font-serif font-medium text-emerald-700">0</span>
+        </div>
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Total Guests</span>
+          <span id="metric-total-guests" class="text-xl font-serif font-medium text-charcoal">0</span>
+        </div>
+        <div class="bg-stone p-3 border border-maroon/15 rounded-[3px] text-center">
+          <span class="text-xs text-slateText block uppercase tracking-wider">Est. Revenue</span>
+          <span id="metric-total-revenue" class="text-xl font-serif font-medium text-maroon">₹0</span>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div class="flex items-center gap-2 w-full sm:w-auto flex-1 max-w-sm">
+          <input type="text" id="admin-search" oninput="renderAdminTable()" placeholder="Search client name or phone..." class="input-architectural text-xs py-1.5 bg-white">
+        </div>
+        <div class="flex items-center gap-2 text-xs">
+          <label class="text-slateText">Filter:</label>
+          <select id="admin-filter-status" onchange="renderAdminTable()" class="input-architectural text-xs py-1 px-3 w-auto bg-white">
+            <option value="ALL">All Statuses</option>
+            <option value="Confirmed">Confirmed</option>
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+          </select>
+          <button onclick="resetToSampleBookings()" class="text-xs text-maroon font-semibold underline ml-2">Reset Samples</button>
+        </div>
+      </div>
+      <div class="overflow-x-auto flex-1 border border-maroon/15 rounded-[3px] bg-white">
+        <table class="w-full text-left text-xs whitespace-nowrap">
+          <thead class="bg-stone text-charcoal border-b border-maroon/15 uppercase tracking-wider text-[11px]">
+            <tr>
+              <th class="p-3">Booking ID</th>
+              <th class="p-3">Client Name</th>
+              <th class="p-3">Phone</th>
+              <th class="p-3">Event Date</th>
+              <th class="p-3">Slot</th>
+              <th class="p-3">Occasion</th>
+              <th class="p-3">Guests</th>
+              <th class="p-3">Est. Amount</th>
+              <th class="p-3">Status</th>
+              <th class="p-3 text-center">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="admin-bookings-tbody" class="divide-y divide-maroon/10 text-charcoal"></tbody>
+        </table>
+      </div>
+      <div class="mt-4 pt-3 border-t border-maroon/15 flex justify-between items-center text-xs text-slateText">
+        <span>Exported .xlsx spreadsheets conform to standard Microsoft Excel formatting.</span>
+        <button onclick="closeAdminModal()" class="btn-boutique-outline text-xs py-1.5 px-4">Close Register</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: 20 Academic Test Cases Suite & Live Auto-Runner -->
+  <div id="test-cases-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay overflow-y-auto">
+    <div class="bg-alabaster border border-maroon/20 rounded-[4px] w-full max-w-5xl p-6 sm:p-8 my-8 max-h-[90vh] flex flex-col text-charcoal shadow-2xl">
+      <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-maroon/15">
+        <div>
+          <h3 class="text-xl font-serif font-medium text-maroon">20 Academic Test Cases Verification Suite</h3>
+          <p class="text-xs text-slateText">Project: Aadya AC Party Hall &bull; Developer: Tejash (CS & IT)</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="runAutomatedTestCases()" id="btn-run-tests" class="btn-boutique-solid text-xs py-2 px-4 shadow">
+            <i class="fa-solid fa-play mr-1.5 text-brass"></i> Auto-Run All 20 Test Cases
+          </button>
+          <button onclick="closeTestCasesModal()" class="text-slateText hover:text-maroon p-2 text-lg">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="my-4 p-3 rounded-[3px] bg-stone border border-maroon/15 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="flex items-center gap-2">
+          <span class="text-charcoal font-medium">Evaluation Status:</span>
+          <span id="test-summary-badge" class="micro-eyebrow">Ready For Execution</span>
+        </div>
+        <span class="text-slateText">Marks Protected: <strong class="text-emerald-700">10 / 10 Marks</strong></span>
+      </div>
+      <div class="overflow-x-auto flex-1 border border-maroon/15 rounded-[3px] bg-white">
+        <table class="w-full text-left text-xs">
+          <thead class="bg-stone text-charcoal border-b border-maroon/15 uppercase text-[11px]">
+            <tr>
+              <th class="p-3 w-16">ID</th>
+              <th class="p-3">Test Scenario</th>
+              <th class="p-3">Input / Condition</th>
+              <th class="p-3">Expected Result</th>
+              <th class="p-3 w-28 text-center">Status</th>
+            </tr>
+          </thead>
+          <tbody id="test-cases-tbody" class="divide-y divide-maroon/10 text-charcoal"></tbody>
+        </table>
+      </div>
+      <div class="mt-4 pt-3 border-t border-maroon/15 flex justify-end">
+        <button onclick="closeTestCasesModal()" class="btn-boutique-outline text-xs py-1.5 px-4">Close Suite</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

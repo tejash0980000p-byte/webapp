@@ -261,6 +261,15 @@ h4,
   width: 100%;
 }
 
+.nav-link-architectural.active {
+  color: var(--brand-maroon);
+  font-weight: 600;
+}
+
+.nav-link-architectural.active::after {
+  width: 100%;
+}
+
 /* Sections */
 .section-alabaster {
   background-color: var(--canvas-alabaster);
